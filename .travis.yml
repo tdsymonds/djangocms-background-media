@@ -1,0 +1,27 @@
+sudo: false
+language: python
+
+python:
+  - "2.7"
+  - "pypy"
+
+env:
+  - DJANGO="django==1.8"
+  - DJANGO="django==1.9"
+
+install:
+  - pip install $DJANGO
+  - pip install -e .
+  - pip install pep8
+  - pip install https://github.com/un33k/pyflakes/tarball/master
+  - pip install coverage==3.7.1 codecov
+  - pip install coveralls
+
+before_script:
+  - "pep8 --exclude=migrations --ignore=E501,E225,E128 ."
+
+script:
+  - coverage run --source=djangocms_background_media manage.py test
+
+after_success:
+- coveralls

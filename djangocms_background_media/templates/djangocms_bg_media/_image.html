@@ -1,0 +1,30 @@
+{% load cms_tags sekizai_tags staticfiles %}
+
+
+<div class="djangocms-bg-media" style="background:url('{{ instance.image.url }}') no-repeat {{ instance.image_position }} fixed; height:{{ instance.height }};">
+
+{% if instance.overlay %} 
+    <div class="djangocms-bg-overlay" style="background:{{ instance.overlay }};">
+{% endif %}
+
+        <div class="djangocms-bg-inner-container">
+            <div class="djangocms-bg-text-wrapper">
+                <div class="djangocms-bg-text">
+                    {% for plugin in instance.child_plugin_instances %}
+                        {% render_plugin plugin %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+{% if instance.overlay %} 
+    </div>
+{% endif %}
+
+</div>
+
+{% addtoblock "css" %}
+    {% if instance.add_style %}
+        <link rel="stylesheet" type="text/css" href="{% static 'djangocms_bg_media/css/main.css' %}">
+    {% endif %}
+{% endaddtoblock %}

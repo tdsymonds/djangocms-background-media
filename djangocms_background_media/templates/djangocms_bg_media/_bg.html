@@ -1,0 +1,7 @@
+{% load cms_tags sekizai_tags staticfiles %}
+
+{% if instance.has_video %}
+    {% include 'djangocms_bg_media/_video.html' %}
+{% else %}
+    {% include 'djangocms_bg_media/_image.html' %}
+{% endif %}

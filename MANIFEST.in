@@ -1,0 +1,7 @@
+include LICENSE
+include README.rst
+recursive-include djangocms_background_media/locale *
+recursive-include djangocms_background_media/migrations *
+recursive-include djangocms_background_media/static *
+recursive-include djangocms_background_media/templates *
+recursive-include djangocms_background_media/tests *

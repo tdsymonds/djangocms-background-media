@@ -1,0 +1,55 @@
+{% load cms_tags sekizai_tags staticfiles %}
+
+<div id="djangocms-bg-video" class="djangocms-bg-media" style="height:{{ instance.height }};">
+
+{% if instance.overlay %} 
+    <div class="djangocms-bg-overlay" style="background:{{ instance.overlay }};">
+{% endif %}
+
+        <div class="djangocms-bg-inner-container">
+            <div class="djangocms-bg-text-wrapper">
+                <div class="djangocms-bg-text">
+                    {% for plugin in instance.child_plugin_instances %}
+                        {% render_plugin plugin %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+{% if instance.overlay %} 
+    </div>
+{% endif %}
+
+</div>
+
+{% addtoblock "css" %}
+    {% if instance.add_style %}
+        <link rel="stylesheet" type="text/css" href="{% static 'djangocms_bg_media/css/main.css' %}">
+    {% endif %}
+{% endaddtoblock %}
+
+{% addtoblock "js" %}
+    <script src="{% static 'djangocms_bg_media/js/jquery.vide.min.js' %}"></script>
+    <script type="text/javascript">
+        $(function(){
+            $('#djangocms-bg-video').vide({
+                {% if instance.video_mp4 %}
+                    'mp4': '{{ instance.video_mp4.url }}',
+                {% endif %}
+                {% if instance.video_ogv %}
+                    'ogv': '{{ instance.video_ogv.url }}',
+                {% endif %}
+                {% if instance.video_webm %}
+                    'webm': '{{ instance.video_webm.url }}',
+                {% endif %}
+                {% if instance.video_poster %}
+                    'poster': '{{ instance.video_poster.url }}',
+                {% endif %}
+            }
+            {% if instance.vide_json_config %}
+                , {{ instance.vide_json_config }}
+            {% endif %}
+            );
+        });
+    </script>
+{% endaddtoblock %}
