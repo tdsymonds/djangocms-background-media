@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible">
+        <title>Django CMS Background Media</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/main.css">
+
+    </head>
+    <body>
+        <!-- Video -->
+        <div id="djangocms-bg-video" class="djangocms-bg-media" style="height:100%;">
+            <div class="djangocms-bg-overlay" style="background:rgba(0,0,0,0.7);">
+                <div class="djangocms-bg-inner-container">
+                    <div class="djangocms-bg-text-wrapper">
+                        <div class="djangocms-bg-text">
+                            <h1><span class="djangocms-bg-highlight">Django CMS</span> Background Media</h1>
+                            <p>The Django CMS plugin that provides <span class="djangocms-bg-highlight">responsive</span>, full screen <span class="djangocms-bg-highlight">background media</span> with text.</p>
+                            <p>Scroll down to see more.</p>
+                            <a class="djangocms-bg-button" href="https://github.com/tdsymonds/djangocms-background-media">View GitHub</a>
+                            <a class="djangocms-bg-button" href="https://github.com/tdsymonds/djangocms-background-media/archive/master.zip">Download</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Image -->
+        <div class="djangocms-bg-media" style="background:url('media/bg.jpg') no-repeat center center fixed; height:100%;">
+                <div class="djangocms-bg-inner-container">
+                    <div class="djangocms-bg-text-wrapper">
+                        <div class="djangocms-bg-text">
+                            <h2>Child <span class="djangocms-bg-highlight">Plugins</span></h2>
+                            <p>Allows <span class="djangocms-bg-highlight">any</span> child plugin, so a huge amount of <span class="djangocms-bg-highlight">variety</span>.</p>
+                            <a class="djangocms-bg-button" href="https://github.com/tdsymonds/djangocms-background-media">View GitHub</a>
+                            <a class="djangocms-bg-button" href="https://github.com/tdsymonds/djangocms-background-media/archive/master.zip">Download</a>
+                        </div>
+                    </div>
+                </div>
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="js/jquery.vide.min.js"></script>
+        <script type="text/javascript">
+            $(function(){
+                $('#djangocms-bg-video').vide('media/bg-video', {
+                    'position': '0% 50%'
+                });
+            });
+        </script>
+
+    </body>
+</html>
