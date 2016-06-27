@@ -1,3 +1,11 @@
+.. image:: https://travis-ci.org/tdsymonds/djangocms-background-media.svg?branch=master
+    :target: https://travis-ci.org/tdsymonds/djangocms-background-media
+.. image:: https://coveralls.io/repos/github/tdsymonds/djangocms-background-media/badge.svg?branch=master&t=1 :target: https://coveralls.io/github/tdsymonds/djangocms-background-media?branch=master 
+.. image:: https://img.shields.io/badge/pypi-v1.0.0-blue.svg
+    :target: https://github.com/tdsymonds/djangocms-background-media
+.. image:: https://img.shields.io/badge/license-MIT%20License-red.svg
+    :target: https://github.com/tdsymonds/djangocms-background-media
+
 djangocms-background-media
 ==========================
 This is a simple `django-cms`_ plugin that provides responsive, full screen background media with text. 
